@@ -15,10 +15,14 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     private Transform groundCheck;
+    
 
     private LayerMask groundLayer;
-
+    private Vector3 lastCheckpoint;
     private Rigidbody2D playerRigidbody;
+    public float deathAnimationDuration = 1f;
+    public SpriteRenderer playerSprite;
+    private bool isDead = false;
 
     #endregion
 
@@ -32,14 +36,19 @@ public class PlayerController : MonoBehaviour
     {
         this.playerRigidbody = this.GetComponent<Rigidbody2D>();
         this.groundLayer = LayerMask.GetMask("Ground");
+        lastCheckpoint = gameObject.transform.position; 
     }
 
     // Update is called once per frame
     void Update()
     {
-        this.Move();
+        if (!isDead)
+        {
+            this.Move();
 
-        this.Jump();
+            this.Jump();
+
+        }
     }
 
     private void FixedUpdate()
@@ -79,5 +88,29 @@ public class PlayerController : MonoBehaviour
         Debug.Log(grounded);
 
         return grounded;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Spike")
+        {
+            StartCoroutine(WarpPlayerToCheckPoint());
+        }
+    }
+
+    IEnumerator WarpPlayerToCheckPoint()
+    {
+        playerSprite.enabled = false;
+        gameObject.transform.position = lastCheckpoint;
+        isDead = true;
+        
+        //colocar animação de morte aqui
+
+        yield return new WaitForSeconds(1f);
+
+        playerSprite.enabled = true;
+        isDead = false;
+
+        
     }
 }
