@@ -144,4 +144,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ab79cf5475d7ff48891e1e67d0e735f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerBlink: 2
+  timerBlink: 1
