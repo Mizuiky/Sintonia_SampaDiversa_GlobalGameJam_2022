@@ -37,43 +37,44 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        
+        this.Move();
+
+        this.Jump();
     }
 
     private void FixedUpdate()
     {
-        this.Move();
-
-        this.Jump();
+        
         
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(this.groundCheck.position, 0.05f);
+        Gizmos.DrawWireSphere(this.groundCheck.position, 0.25f);
+    }
+
+    private void Move()
+    {
+        this.horizontalInput = Input.GetAxis("Horizontal");
+
+        // make condition to change input according with the player , if is player 1 horizontal and vertical, if player 2 another one..
+        this.playerRigidbody.velocity = new Vector2(horizontalInput * moveSpeed * Time.deltaTime, this.playerRigidbody.velocity.y);
     }
 
     private void Jump()
     {
         if (Input.GetKeyDown(KeyCode.UpArrow) && IsGrounded())
         {
-            this.playerRigidbody.AddForce(Vector2.up * jumpForce);
+            Debug.Log("entrou no jump");
+            this.playerRigidbody.AddForce(new Vector2(0f, 1 * jumpForce), ForceMode2D.Force);
         }
-    }
-
-    private void Move()
-    {
-        horizontalInput = Input.GetAxis("Horizontal");
-
-        this.playerRigidbody.AddForce(Vector2.right * horizontalInput * moveSpeed * Time.deltaTime);
     }
 
     private bool IsGrounded()
     {
         Debug.Log("check is grounded");
-        bool grounded = Physics2D.OverlapCircle(this.groundCheck.position, 0.05f, this.groundLayer);
+        bool grounded = Physics2D.OverlapCircle(this.groundCheck.position, 0.25f, this.groundLayer);
 
         Debug.Log(grounded);
 
