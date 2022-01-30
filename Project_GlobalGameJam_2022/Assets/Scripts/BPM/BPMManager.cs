@@ -119,8 +119,6 @@ public class BPMManager : MonoBehaviour
 
                 //mudar musica para musica do indio floresta
                 break;
-        }
-
-        
+        }      
     }
 }

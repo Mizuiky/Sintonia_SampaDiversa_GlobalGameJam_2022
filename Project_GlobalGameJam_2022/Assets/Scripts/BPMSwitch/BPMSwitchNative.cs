@@ -7,6 +7,9 @@ public class BPMSwitchNative : MonoBehaviour
     public delegate void Action(PlayerType currentPlayer);
     public static event Action OnChangeBPM;
 
+    [SerializeField]
+    private PlayerType changePlayerTo;
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Player"))
@@ -17,12 +20,14 @@ public class BPMSwitchNative : MonoBehaviour
 
     private IEnumerator ColectStar()
     {
+        Debug.Log("colecstar Indian");
         //som do coletavel
 
         if (OnChangeBPM != null)
         {
             //mandar mensagem ao game manager para trocar o player atual
-            OnChangeBPM(PlayerType.ModernIndian);
+            Debug.Log("chama modern");
+            OnChangeBPM(changePlayerTo);
         }
 
         //mandar mensagem ao player que for indian para desabilitar o input

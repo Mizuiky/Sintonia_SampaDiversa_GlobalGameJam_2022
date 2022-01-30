@@ -111,7 +111,7 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        if(this.horizontalInput != 0)
+        /*if(this.horizontalInput != 0)
         {
             Debug.Log("Horizontal Input" + this.horizontalInput.ToString());
         }
@@ -119,7 +119,7 @@ public class PlayerController : MonoBehaviour
         if(this.verticalInput != 0)
         {
             Debug.Log("Vertical Input" + this.verticalInput.ToString());
-        }
+        }*/
         
         // make condition to change input according with the player , if is player 1 horizontal and vertical, if player 2 another one..
         this.playerRigidbody.velocity = new Vector2(horizontalInput * moveSpeed * Time.deltaTime, this.playerRigidbody.velocity.y);
@@ -127,7 +127,7 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
-        Debug.Log("entrou no jump");
+        //Debug.Log("entrou no jump");
 
         animator.Play("PlayerJump");
         this.playerRigidbody.AddForce(new Vector2(0f, verticalInput * jumpForce), ForceMode2D.Force);
@@ -135,10 +135,10 @@ public class PlayerController : MonoBehaviour
 
     private bool IsGrounded()
     {
-        Debug.Log("check is grounded");
+        //Debug.Log("check is grounded");
         bool grounded = Physics2D.OverlapCircle(this.groundCheck.position, 0.25f, this.groundLayer);
 
-        Debug.Log(grounded);
+        //Debug.Log(grounded);
 
         return grounded;
     }
