@@ -11,6 +11,7 @@ public class BlinkingBlocksBase : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        BPMManager.OnKeyPressed += setBlink;
         StartCoroutine(Blink());
         
     }
@@ -47,5 +48,15 @@ public class BlinkingBlocksBase : MonoBehaviour
       
 
 
+    }
+
+    private void setBlink(float blicksongBeat)
+    {
+        this.timerBlink = blicksongBeat;
+    }
+
+    public void OnDisable()
+    {
+        BPMManager.OnKeyPressed -= setBlink;
     }
 }
