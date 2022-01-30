@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D playerRigidbody;
     public float deathAnimationDuration = 1f;
     public SpriteRenderer playerSprite;
-    private bool isDead = false;
+    public bool isDead = false;
     private bool canJump = false;
 
     private Animator animator;
