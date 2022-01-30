@@ -242,7 +242,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6425817483530075564, guid: 4fddf8eda6baf7743bbf198e71979ff6, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6425817483530075564, guid: 4fddf8eda6baf7743bbf198e71979ff6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1001,6 +1001,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &5104251249009453612
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7797773551423331002, guid: 1d6022c9334a7cd45a1b60fa81275ddc, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7797773551423331002, guid: 1d6022c9334a7cd45a1b60fa81275ddc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 7797773551423331002, guid: 1d6022c9334a7cd45a1b60fa81275ddc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 7797773551423331002, guid: 1d6022c9334a7cd45a1b60fa81275ddc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7797773551423331002, guid: 1d6022c9334a7cd45a1b60fa81275ddc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7797773551423331002, guid: 1d6022c9334a7cd45a1b60fa81275ddc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7797773551423331002, guid: 1d6022c9334a7cd45a1b60fa81275ddc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7797773551423331002, guid: 1d6022c9334a7cd45a1b60fa81275ddc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7797773551423331002, guid: 1d6022c9334a7cd45a1b60fa81275ddc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7797773551423331002, guid: 1d6022c9334a7cd45a1b60fa81275ddc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7797773551423331002, guid: 1d6022c9334a7cd45a1b60fa81275ddc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7797773551423331005, guid: 1d6022c9334a7cd45a1b60fa81275ddc, type: 3}
+      propertyPath: m_Name
+      value: ModernIndianStar
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1d6022c9334a7cd45a1b60fa81275ddc, type: 3}
 --- !u!50 &6514260641201340489
 Rigidbody2D:
   serializedVersion: 4
@@ -1172,7 +1229,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6270744351426234635, guid: eeee94418492bb042863c7e7f979a6c9, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6270744351426234635, guid: eeee94418492bb042863c7e7f979a6c9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1245,7 +1302,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9102442381815191509, guid: 04f3e175d2074364a8f64d09f1422c3f, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9102442381815191509, guid: 04f3e175d2074364a8f64d09f1422c3f, type: 3}
       propertyPath: m_LocalPosition.x
