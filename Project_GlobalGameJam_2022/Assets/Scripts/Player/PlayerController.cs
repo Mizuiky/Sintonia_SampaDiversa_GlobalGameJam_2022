@@ -72,8 +72,6 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        
-
         // make condition to change input according with the player , if is player 1 horizontal and vertical, if player 2 another one..
         this.playerRigidbody.velocity = new Vector2(horizontalInput * moveSpeed * Time.deltaTime, this.playerRigidbody.velocity.y);
     }
