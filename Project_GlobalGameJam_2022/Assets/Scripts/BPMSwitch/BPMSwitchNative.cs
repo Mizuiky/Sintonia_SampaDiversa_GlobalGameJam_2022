@@ -5,7 +5,7 @@ using UnityEngine;
 public class BPMSwitchNative : MonoBehaviour
 {
     public delegate void Action(PlayerType currentPlayer);
-    public static Action OnChangeBPM;
+    public static event Action OnChangeBPM;
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -22,8 +22,10 @@ public class BPMSwitchNative : MonoBehaviour
         if (OnChangeBPM != null)
         {
             //mandar mensagem ao game manager para trocar o player atual
-            OnChangeBPM(PlayerType.Man);
+            OnChangeBPM(PlayerType.ModernIndian);
         }
+
+        //mandar mensagem ao player que for indian para desabilitar o input
 
         //aqui seria legal uma particula
 

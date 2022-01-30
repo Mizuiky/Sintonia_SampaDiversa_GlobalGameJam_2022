@@ -13,13 +13,19 @@ public class BPMManager : MonoBehaviour
 
     private Key currentKey;
 
-    private PlayerType currentPlayer = PlayerType.Man;
+    private PlayerType currentPlayer = PlayerType.Indian;
 
     [SerializeField]
     private Color keyPressed;
 
     [SerializeField]
     private Color releasedKey;
+
+    [SerializeField]
+    private GameObject indianBPMColor;
+
+    [SerializeField]
+    private GameObject moderIndianBPMColor;
 
     #endregion
 
@@ -32,6 +38,10 @@ public class BPMManager : MonoBehaviour
     void Start()
     {
         //pegar o currentPlayer de algum lugar , game manager? variavel global?
+        BPMSwitchNative.OnChangeBPM += changePlayerKeyboard;
+
+        this.indianBPMColor.SetActive(true);
+        this.moderIndianBPMColor.SetActive(false);
     }
 
     private void Update()
@@ -39,21 +49,26 @@ public class BPMManager : MonoBehaviour
         this.InputKey();
     }
 
+    public void OnDisable()
+    {
+        BPMSwitchNative.OnChangeBPM -= changePlayerKeyboard;
+    }
+
     void InputKey()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            Debug.Log("input Q");
+            Debug.Log("input 1");
             ChangeKeyColor(0);
         }
-        else if (Input.GetKeyDown(KeyCode.W))
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            Debug.Log("input W");
+            Debug.Log("input 2");
             ChangeKeyColor(1);
         }
-        else if (Input.GetKeyDown(KeyCode.E))
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            Debug.Log("input E");
+            Debug.Log("input 3");
             ChangeKeyColor(2);
         }
     }
@@ -84,5 +99,28 @@ public class BPMManager : MonoBehaviour
         }
 
         Debug.Log("saiu corotina");
+    }
+
+    private void changePlayerKeyboard(PlayerType newPlayer)
+    {
+        this.currentPlayer = newPlayer;
+
+        switch(newPlayer)
+        {
+            case PlayerType.Indian:
+                this.indianBPMColor.SetActive(true);
+                this.moderIndianBPMColor.SetActive(false);     
+                
+                //mudar musica para musica do indio floresta
+                break;
+            case PlayerType.ModernIndian:
+                this.moderIndianBPMColor.SetActive(true);
+                this.indianBPMColor.SetActive(false);
+
+                //mudar musica para musica do indio floresta
+                break;
+        }
+
+        
     }
 }

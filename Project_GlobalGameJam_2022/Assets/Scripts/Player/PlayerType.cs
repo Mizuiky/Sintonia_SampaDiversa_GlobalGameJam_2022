@@ -5,5 +5,5 @@ using UnityEngine;
 public enum PlayerType
 {
     Indian = 0,
-    Man = 1
+    ModernIndian = 1
 }

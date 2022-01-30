@@ -7,6 +7,10 @@ public class PlayerController : MonoBehaviour
     #region Private Fields
 
     private float horizontalInput;
+    private float verticalInput;
+
+    private string horizontalAxis;
+    private string verticalAxis;
 
     [SerializeField]
     private float moveSpeed;
@@ -26,11 +30,20 @@ public class PlayerController : MonoBehaviour
 
     private Animator animator;
 
+    [SerializeField]
+    private PlayerType playerType;
+    private bool canDoInput = true;
+
     #endregion
 
     #region Properties
 
     #endregion
+
+    void Awake()
+    {
+        GetInput();
+    }
 
     void Start()
     {
@@ -38,23 +51,38 @@ public class PlayerController : MonoBehaviour
         animator = this.GetComponentInChildren<Animator>();
 
         this.groundLayer = LayerMask.GetMask("Ground");
-        lastCheckpoint = gameObject.transform.position; 
+        lastCheckpoint = gameObject.transform.position;    
     }
 
     // Update is called once per frame
     void Update()
     {
-        this.horizontalInput = Input.GetAxis("Horizontal");
-        if (Input.GetKeyDown(KeyCode.UpArrow) && IsGrounded())
+        this.horizontalInput = Input.GetAxisRaw(horizontalAxis);
+        this.verticalInput = Input.GetAxisRaw(verticalAxis);
+
+        if (IsGrounded())
         {
             canJump = true;
         }
-
+    }
+    private void GetInput()
+    {
+        switch (this.playerType)
+        {
+            case PlayerType.Indian:
+                this.horizontalAxis = "Horizontal";
+                this.verticalAxis = "Vertical";
+                break;
+            case PlayerType.ModernIndian:
+                this.horizontalAxis = "ModernHorizontal";
+                this.verticalAxis = "ModernVertical";
+                break;
+        }
     }
 
     private void FixedUpdate()
     {
-        if (!isDead)
+        if (!isDead && canDoInput)
         {
             this.Move();
 
@@ -65,7 +93,6 @@ public class PlayerController : MonoBehaviour
             }
 
         }
-
     }
 
     private void OnDrawGizmos()
@@ -74,8 +101,26 @@ public class PlayerController : MonoBehaviour
         Gizmos.DrawWireSphere(this.groundCheck.position, 0.25f);
     }
 
+    private void ChangeInputState(PlayerType playerToStop,bool canBlock)
+    {
+        if(this.playerType == playerToStop)
+        {
+            this.canDoInput = canBlock;
+        }    
+    }
+
     private void Move()
     {
+        if(this.horizontalInput != 0)
+        {
+            Debug.Log("Horizontal Input" + this.horizontalInput.ToString());
+        }
+
+        if(this.verticalInput != 0)
+        {
+            Debug.Log("Vertical Input" + this.verticalInput.ToString());
+        }
+        
         // make condition to change input according with the player , if is player 1 horizontal and vertical, if player 2 another one..
         this.playerRigidbody.velocity = new Vector2(horizontalInput * moveSpeed * Time.deltaTime, this.playerRigidbody.velocity.y);
     }
@@ -85,7 +130,7 @@ public class PlayerController : MonoBehaviour
         Debug.Log("entrou no jump");
 
         animator.Play("PlayerJump");
-        this.playerRigidbody.AddForce(new Vector2(0f, 1 * jumpForce), ForceMode2D.Force);
+        this.playerRigidbody.AddForce(new Vector2(0f, verticalInput * jumpForce), ForceMode2D.Force);
     }
 
     private bool IsGrounded()
