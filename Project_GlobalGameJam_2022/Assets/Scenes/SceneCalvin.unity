@@ -714,7 +714,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6425817483530075566, guid: 4fddf8eda6baf7743bbf198e71979ff6, type: 3}
       propertyPath: moveSpeed
-      value: 1600
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 6425817483530075566, guid: 4fddf8eda6baf7743bbf198e71979ff6, type: 3}
       propertyPath: playerSprite
@@ -1575,7 +1575,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2037901909}
-  - component: {fileID: 2037901908}
   - component: {fileID: 2037901907}
   m_Layer: 0
   m_Name: ArvoreManager
@@ -1602,21 +1601,6 @@ MonoBehaviour:
   - {fileID: 1631172585}
   - {fileID: 1915040477}
   - {fileID: 190023303}
---- !u!114 &2037901908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2037901906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5416b86e23e0b4548b68329a2b36d755, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  listOfTrees: []
 --- !u!4 &2037901909
 Transform:
   m_ObjectHideFlags: 0
