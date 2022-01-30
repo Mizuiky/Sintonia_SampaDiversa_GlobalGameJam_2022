@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     public float deathAnimationDuration = 1f;
     public SpriteRenderer playerSprite;
     private bool isDead = false;
+    private bool canJump = false;
 
     #endregion
 
@@ -39,19 +40,28 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isDead)
+        this.horizontalInput = Input.GetAxis("Horizontal");
+        if (Input.GetKeyDown(KeyCode.UpArrow) && IsGrounded())
         {
-            this.Move();
-
-            this.Jump();
-
+            canJump = true;
         }
+
     }
 
     private void FixedUpdate()
     {
-        
-        
+        if (!isDead)
+        {
+            this.Move();
+
+            if (canJump)
+            {
+                Jump();
+                canJump = false;
+            }
+
+        }
+
     }
 
     private void OnDrawGizmos()
@@ -62,7 +72,7 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        this.horizontalInput = Input.GetAxis("Horizontal");
+        
 
         // make condition to change input according with the player , if is player 1 horizontal and vertical, if player 2 another one..
         this.playerRigidbody.velocity = new Vector2(horizontalInput * moveSpeed * Time.deltaTime, this.playerRigidbody.velocity.y);
@@ -70,11 +80,8 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow) && IsGrounded())
-        {
-            Debug.Log("entrou no jump");
-            this.playerRigidbody.AddForce(new Vector2(0f, 1 * jumpForce), ForceMode2D.Force);
-        }
+        Debug.Log("entrou no jump");
+        this.playerRigidbody.AddForce(new Vector2(0f, 1 * jumpForce), ForceMode2D.Force);
     }
 
     private bool IsGrounded()
