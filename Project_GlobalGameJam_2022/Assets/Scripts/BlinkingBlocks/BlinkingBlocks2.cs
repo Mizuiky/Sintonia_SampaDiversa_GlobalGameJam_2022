@@ -11,7 +11,7 @@ public class BlinkingBlocks2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        BPMManager.OnKeyPressed += setBlick;
+        BPMManager.OnKeyPressed += setBlink;
 
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
 
@@ -30,14 +30,14 @@ public class BlinkingBlocks2 : MonoBehaviour
         
     }
 
-    private void setBlick(float blicksongBeat)
+    private void setBlink(float blicksongBeat)
     {
         this.timerBlink = blicksongBeat;
     }
 
-    public void OnEnable()
+    public void OnDisable()
     {
-        BPMManager.OnKeyPressed -= setBlick;
+        BPMManager.OnKeyPressed -= setBlink;
     }
 
     IEnumerator Blink()

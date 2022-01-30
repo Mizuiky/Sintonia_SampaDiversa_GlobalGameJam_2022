@@ -233,11 +233,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6425817483530075566, guid: 4fddf8eda6baf7743bbf198e71979ff6, type: 3}
       propertyPath: jumpForce
-      value: 600
+      value: 550
       objectReference: {fileID: 0}
     - target: {fileID: 6425817483530075566, guid: 4fddf8eda6baf7743bbf198e71979ff6, type: 3}
       propertyPath: moveSpeed
-      value: 200
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 6425817483530075566, guid: 4fddf8eda6baf7743bbf198e71979ff6, type: 3}
       propertyPath: playerSprite
@@ -245,7 +245,7 @@ PrefabInstance:
       objectReference: {fileID: 1733121407}
     - target: {fileID: 6425817483530075567, guid: 4fddf8eda6baf7743bbf198e71979ff6, type: 3}
       propertyPath: m_GravityScale
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6425817483530075569, guid: 4fddf8eda6baf7743bbf198e71979ff6, type: 3}
       propertyPath: m_Name
@@ -296,6 +296,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 687780034891674745, guid: f28bacaba2266774bba1944a3cd183ae, type: 3}
+      propertyPath: songBeat
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2901875353161175844, guid: f28bacaba2266774bba1944a3cd183ae, type: 3}
+      propertyPath: songBeat
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825945029314594536, guid: f28bacaba2266774bba1944a3cd183ae, type: 3}
+      propertyPath: songBeat
+      value: 1.4
+      objectReference: {fileID: 0}
     - target: {fileID: 8809112808321924377, guid: f28bacaba2266774bba1944a3cd183ae, type: 3}
       propertyPath: m_Camera
       value: 
@@ -855,7 +867,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855469392}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.18, y: 0.0206, z: 0}
+  m_LocalPosition: {x: -9.25, y: 0.05, z: 0}
   m_LocalScale: {x: 1, y: 10.01638, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
