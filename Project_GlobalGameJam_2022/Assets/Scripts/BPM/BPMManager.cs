@@ -37,7 +37,6 @@ public class BPMManager : MonoBehaviour
 
     void Start()
     {
-        //pegar o currentPlayer de algum lugar , game manager? variavel global?
         BPMSwitchNative.OnChangeBPM += changePlayerKeyboard;
 
         this.indianBPMColor.SetActive(true);
@@ -120,10 +119,8 @@ public class BPMManager : MonoBehaviour
                 this.moderIndianBPMColor.SetActive(true);
                 this.indianBPMColor.SetActive(false);
 
-                //mudar musica para musica do indio floresta
+                //mudar musica para musica do indio funai
                 break;
-        }
-
-        
+        }      
     }
 }

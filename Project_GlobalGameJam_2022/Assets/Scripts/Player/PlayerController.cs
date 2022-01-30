@@ -42,6 +42,8 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
+        BPMSwitchNative.OnLockPlayer += this.ChangeInputState;
+
         GetInput();
     }
 
@@ -65,6 +67,12 @@ public class PlayerController : MonoBehaviour
             canJump = true;
         }
     }
+
+    void Ondisable()
+    {
+        BPMSwitchNative.OnLockPlayer -= this.ChangeInputState;
+    }
+
     private void GetInput()
     {
         switch (this.playerType)
@@ -101,33 +109,33 @@ public class PlayerController : MonoBehaviour
         Gizmos.DrawWireSphere(this.groundCheck.position, 0.25f);
     }
 
-    private void ChangeInputState(PlayerType playerToStop,bool canBlock)
+    private void ChangeInputState(PlayerType playerToStop)
     {
-        if(this.playerType == playerToStop)
+        Debug.Log("changeinput state");
+
+        Debug.Log("Playertostop" + playerToStop.ToString());
+
+        if (this.playerType == playerToStop)
         {
-            this.canDoInput = canBlock;
-        }    
+            Debug.Log("Playertype == player to stop");
+            this.canDoInput = false;
+        }
+        else
+        {
+            Debug.Log("else");
+            this.canDoInput = true;
+        }
     }
 
     private void Move()
-    {
-        if(this.horizontalInput != 0)
-        {
-            Debug.Log("Horizontal Input" + this.horizontalInput.ToString());
-        }
-
-        if(this.verticalInput != 0)
-        {
-            Debug.Log("Vertical Input" + this.verticalInput.ToString());
-        }
-        
+    {       
         // make condition to change input according with the player , if is player 1 horizontal and vertical, if player 2 another one..
         this.playerRigidbody.velocity = new Vector2(horizontalInput * moveSpeed * Time.deltaTime, this.playerRigidbody.velocity.y);
     }
 
     private void Jump()
     {
-        Debug.Log("entrou no jump");
+        //Debug.Log("entrou no jump");
 
         animator.Play("PlayerJump");
         this.playerRigidbody.AddForce(new Vector2(0f, verticalInput * jumpForce), ForceMode2D.Force);
@@ -135,10 +143,10 @@ public class PlayerController : MonoBehaviour
 
     private bool IsGrounded()
     {
-        Debug.Log("check is grounded");
+        //Debug.Log("check is grounded");
         bool grounded = Physics2D.OverlapCircle(this.groundCheck.position, 0.25f, this.groundLayer);
 
-        Debug.Log(grounded);
+        //Debug.Log(grounded);
 
         return grounded;
     }
