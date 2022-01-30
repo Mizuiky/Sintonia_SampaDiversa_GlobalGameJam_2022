@@ -60,16 +60,19 @@ public class BPMManager : MonoBehaviour
         {
             Debug.Log("input 1");
             ChangeKeyColor(0);
+            AudioManager.pitchValue = currentKey.songBeat;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             Debug.Log("input 2");
             ChangeKeyColor(1);
+            AudioManager.pitchValue = currentKey.songBeat;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             Debug.Log("input 3");
             ChangeKeyColor(2);
+            AudioManager.pitchValue = currentKey.songBeat;
         }
     }
 

@@ -11,7 +11,7 @@ public class MainMenu : MonoBehaviour
     
     public void PlayGame()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("SceneCalvin");
     }
     
     public void ExitGame()

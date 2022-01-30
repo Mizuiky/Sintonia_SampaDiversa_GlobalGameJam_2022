@@ -860,7 +860,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8621636047066398578, guid: 32af87dcf82607d4aa5e38186e784086, type: 3}
       propertyPath: sounds.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8621636047066398578, guid: 32af87dcf82607d4aa5e38186e784086, type: 3}
       propertyPath: sounds.Array.data[0].clip
@@ -875,11 +875,31 @@ PrefabInstance:
       value: Intro
       objectReference: {fileID: 0}
     - target: {fileID: 8621636047066398578, guid: 32af87dcf82607d4aa5e38186e784086, type: 3}
+      propertyPath: sounds.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 372ce0e5e2bbb4e48bc08e1335896a8f, type: 3}
+    - target: {fileID: 8621636047066398578, guid: 32af87dcf82607d4aa5e38186e784086, type: 3}
+      propertyPath: sounds.Array.data[1].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8621636047066398578, guid: 32af87dcf82607d4aa5e38186e784086, type: 3}
+      propertyPath: sounds.Array.data[1].name
+      value: MusicaOriginaria
+      objectReference: {fileID: 0}
+    - target: {fileID: 8621636047066398578, guid: 32af87dcf82607d4aa5e38186e784086, type: 3}
       propertyPath: sounds.Array.data[0].pitch
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8621636047066398578, guid: 32af87dcf82607d4aa5e38186e784086, type: 3}
+      propertyPath: sounds.Array.data[1].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8621636047066398578, guid: 32af87dcf82607d4aa5e38186e784086, type: 3}
       propertyPath: sounds.Array.data[0].volume
+      value: 0.479
+      objectReference: {fileID: 0}
+    - target: {fileID: 8621636047066398578, guid: 32af87dcf82607d4aa5e38186e784086, type: 3}
+      propertyPath: sounds.Array.data[1].volume
       value: 0.479
       objectReference: {fileID: 0}
     m_RemovedComponents: []
