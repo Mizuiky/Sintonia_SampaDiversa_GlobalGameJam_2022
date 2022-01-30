@@ -4,30 +4,33 @@ using UnityEngine;
 
 public class BPMSwitchNative : MonoBehaviour
 {
-
-    //public Keyboard keyboardModern;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public delegate void Action(PlayerType currentPlayer);
+    public static Action OnChangeBPM;
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if(collision.CompareTag("Player"))
         {
-            //keyboardModern
-
-            Destroy(gameObject);
-
+            StartCoroutine(ColectStar());       
         }
     }
 
+    private IEnumerator ColectStar()
+    {
+        //som do coletavel
+
+        if (OnChangeBPM != null)
+        {
+            //mandar mensagem ao game manager para trocar o player atual
+            OnChangeBPM(PlayerType.Man);
+        }
+
+        //aqui seria legal uma particula
+
+        //mandar mensagem ao background para add um arvore dentra as que estao em um array
+
+        yield return new WaitForSeconds(0.3f);
+
+        this.gameObject.SetActive(false);
+    }
 }
