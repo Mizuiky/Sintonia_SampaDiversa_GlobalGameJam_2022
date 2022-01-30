@@ -585,7 +585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06ab42b22efe9124090c52f015c54cc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: 1
+  player: 0
   keys:
   - {fileID: 6556067157161826591}
   - {fileID: 6276138353413724268}
