@@ -304,6 +304,49 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8616154855199340151, guid: abe187dc37e39054d9589c6b12714e61, type: 3}
   m_PrefabInstance: {fileID: 265991067}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &304089045
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 304089047}
+  - component: {fileID: 304089046}
+  m_Layer: 0
+  m_Name: AudioController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &304089046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304089045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8810580eedf87c54a97f1935b19a413a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &304089047
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304089045}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.4248963, y: -0.53352565, z: 341.5543}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &388051161 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2728642972870348876, guid: 1bfe66555a73f7d448cb6867c2a68f5e, type: 3}
@@ -986,6 +1029,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 796175465800599889, guid: f28bacaba2266774bba1944a3cd183ae, type: 3}
+      propertyPath: songBeat
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1186699784973492035, guid: f28bacaba2266774bba1944a3cd183ae, type: 3}
+      propertyPath: songBeat
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215331016581458985, guid: f28bacaba2266774bba1944a3cd183ae, type: 3}
+      propertyPath: songBeat
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2133166798448811568, guid: f28bacaba2266774bba1944a3cd183ae, type: 3}
+      propertyPath: songBeat
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5300507452871483064, guid: f28bacaba2266774bba1944a3cd183ae, type: 3}
+      propertyPath: songBeat
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7512526994107005413, guid: f28bacaba2266774bba1944a3cd183ae, type: 3}
+      propertyPath: songBeat
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 8809112808321924377, guid: f28bacaba2266774bba1944a3cd183ae, type: 3}
       propertyPath: m_Camera
       value: 
@@ -1527,6 +1594,30 @@ PrefabInstance:
     - target: {fileID: 6346224722562636593, guid: 32af87dcf82607d4aa5e38186e784086, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8621636047066398578, guid: 32af87dcf82607d4aa5e38186e784086, type: 3}
+      propertyPath: sounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8621636047066398578, guid: 32af87dcf82607d4aa5e38186e784086, type: 3}
+      propertyPath: sounds.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 372ce0e5e2bbb4e48bc08e1335896a8f, type: 3}
+    - target: {fileID: 8621636047066398578, guid: 32af87dcf82607d4aa5e38186e784086, type: 3}
+      propertyPath: sounds.Array.data[0].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8621636047066398578, guid: 32af87dcf82607d4aa5e38186e784086, type: 3}
+      propertyPath: sounds.Array.data[0].name
+      value: MusicaOriginaria
+      objectReference: {fileID: 0}
+    - target: {fileID: 8621636047066398578, guid: 32af87dcf82607d4aa5e38186e784086, type: 3}
+      propertyPath: sounds.Array.data[0].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8621636047066398578, guid: 32af87dcf82607d4aa5e38186e784086, type: 3}
+      propertyPath: sounds.Array.data[0].volume
+      value: 0.467
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32af87dcf82607d4aa5e38186e784086, type: 3}
