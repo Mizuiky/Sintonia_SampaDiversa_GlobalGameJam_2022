@@ -159,7 +159,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 1
   m_AngularDrag: 0.05
-  m_GravityScale: 3
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -177,9 +177,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9792bc7ea79d6be4b92a5a8158f11467, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 300
-  jumpForce: 500
+  moveSpeed: 200
+  jumpForce: 600
   groundCheck: {fileID: 6425817484639581103}
+  deathAnimationDuration: 1
+  playerSprite: {fileID: 0}
 --- !u!95 &6425817483530075565
 Animator:
   serializedVersion: 3
