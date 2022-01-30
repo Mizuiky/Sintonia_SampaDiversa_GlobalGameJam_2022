@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
     private bool isDead = false;
     private bool canJump = false;
 
+    private Animator animator;
+
     #endregion
 
     #region Properties
@@ -33,6 +35,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         this.playerRigidbody = this.GetComponent<Rigidbody2D>();
+        animator = this.GetComponentInChildren<Animator>();
+
         this.groundLayer = LayerMask.GetMask("Ground");
         lastCheckpoint = gameObject.transform.position; 
     }
@@ -79,6 +83,8 @@ public class PlayerController : MonoBehaviour
     private void Jump()
     {
         Debug.Log("entrou no jump");
+
+        animator.Play("PlayerJump");
         this.playerRigidbody.AddForce(new Vector2(0f, 1 * jumpForce), ForceMode2D.Force);
     }
 
