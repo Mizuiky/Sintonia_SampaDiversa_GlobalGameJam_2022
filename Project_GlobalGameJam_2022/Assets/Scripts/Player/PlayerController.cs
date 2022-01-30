@@ -16,7 +16,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Transform groundCheck;
     
-
     private LayerMask groundLayer;
     private Vector3 lastCheckpoint;
     private Rigidbody2D playerRigidbody;
@@ -25,8 +24,6 @@ public class PlayerController : MonoBehaviour
     private bool isDead = false;
 
     #endregion
-
-
 
     #region Properties
 
