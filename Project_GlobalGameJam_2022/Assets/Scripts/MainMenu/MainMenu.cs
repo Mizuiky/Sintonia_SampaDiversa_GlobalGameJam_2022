@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public Image backgroundImage;
+
     
     public void PlayGame()
     {
@@ -16,5 +18,22 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("quit");
         Application.Quit();
+    }
+
+    public void CreditsOn()
+    {
+        
+        Color tmp = backgroundImage.color;
+        tmp.a = 0.3f;
+        backgroundImage.color = tmp;
+
+    }
+    public void CreditsOff()
+    {
+        
+        Color tmp = backgroundImage.color;
+        tmp.a = 1f;
+        backgroundImage.color = tmp;
+
     }
 }
